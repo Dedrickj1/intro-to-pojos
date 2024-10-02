@@ -5,14 +5,21 @@ the object.
 */
 
 // Your code here 
-
-// let survey = {
-//   name: 'Check',
-//   question: 'Satisfied?',
-//   choices: ['Yes', 'No']
-// }
-// console.log(hasKeys(survey, ['question', 'choices'])); // true
-// console.log(hasKeys(survey, ['numSubmitted', 'choices'])); // false
+function hasKeys(obj, keys){
+  for (let i = 0; i < keys.length; i++) {
+    if (!(keys[i] in obj)) {
+      return false;
+    }
+  }
+  return true;
+}
+let survey = {
+  name: 'Check',
+  question: 'Satisfied?',
+  choices: ['Yes', 'No']
+}
+console.log(hasKeys(survey, ['question', 'choices'])); // true
+console.log(hasKeys(survey, ['numSubmitted', 'choices'])); // false
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 
